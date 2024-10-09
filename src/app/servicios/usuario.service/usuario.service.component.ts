@@ -10,17 +10,20 @@ export class UsuarioService {
 
   private apiUrl = 'https://matipachame-apiclinica.mdbgo.io';
 
+  public usuarioLogueado: Usuario = { nombre: '', apellido: '', mail: '', nacimiento: new Date(), usuario: '', password: '', tipo_usuario: 0, autorizado: 1 };
+
   constructor(private http: HttpClient) {}
 
-  loginAPI(usuario: Usuario): Observable<any> {
-    return this.http.post(this.apiUrl, usuario);
+  public estoyLogueado(): boolean {
+    return this.usuarioLogueado.usuario != '';
   }
 
-  setLogueado(): void {
-    localStorage.setItem('logueado', 'true');
+  public loginAPI(usuario: Usuario) {
+    return this.http.post(this.apiUrl + "/login", usuario);
   }
 
-  estoyLogueado(): boolean {
-    return localStorage.getItem('logueado') === 'true';
+  public setLogueadoXApi(usuario: Usuario) {
+    this.usuarioLogueado = usuario;
+
   }
 }

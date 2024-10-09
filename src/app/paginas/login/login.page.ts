@@ -17,14 +17,14 @@ export class LoginPage {
   constructor(private navCtrl: NavController, private usuarioService: UsuarioService) {
 
     if(this.usuarioService.estoyLogueado()) {
-      this.navCtrl.navigateRoot('/bienvenida');
+      this.navCtrl.navigateRoot('chat');
 
    }
 }
 
 login() {
   this.isLoading = true; 
-  this.usuarioService.loginAPI(this.usuario).subscribe(
+  this.usuarioService.loginAPI(this.usuario).subscribe({next:
     x => {
       if (x == null) {
         alert("Usuario/contraseña incorrecta");
@@ -39,17 +39,16 @@ login() {
             alert("Su usuario aún no está habilitado.");
           } else {
             localStorage.setItem("UsuarioToken", x.toString());
-            this.usuarioService.setLogueado();
-            this.navCtrl.navigateRoot('/bienvenida');
+            this.navCtrl.navigateRoot('chat');
           }
         }
       }
     },
-    err => {
+    error : err => {
       this.isLoading = false;
       console.error(err);
       alert('Error en la autenticación.');
     }
-  );
+});
 }
 }
