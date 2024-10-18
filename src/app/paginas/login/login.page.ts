@@ -39,7 +39,7 @@ login() {
             alert("Su usuario aún no está habilitado.");
           } else {
             localStorage.setItem("UsuarioToken", x.toString());
-            this.navCtrl.navigateRoot('chat');
+            this.navCtrl.navigateRoot('menu');
           }
         }
       }

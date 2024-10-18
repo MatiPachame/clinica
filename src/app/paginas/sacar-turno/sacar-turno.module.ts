@@ -6,8 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 import { SacarTurnoPageRoutingModule } from './sacar-turno-routing.module';
 
-import { SacarTurnoPage } from './sacar-turno.page';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +13,5 @@ import { SacarTurnoPage } from './sacar-turno.page';
     IonicModule,
     SacarTurnoPageRoutingModule
   ],
-  declarations: [SacarTurnoPage]
 })
 export class SacarTurnoPageModule {}
