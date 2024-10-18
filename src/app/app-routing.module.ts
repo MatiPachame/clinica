@@ -14,7 +14,17 @@ const routes: Routes = [
   {
     path: 'chat',
     loadChildren: () => import('./paginas/chat/chat.module').then(m => m.ChatPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./paginas/menu/menu.module').then( m => m.MenuPageModule)
+  },
+  {
+    path: 'sacar-turno',
+    loadChildren: () => import('./paginas/sacar-turno/sacar-turno.module').then( m => m.SacarTurnoPageModule)
   }
+
+
 
 
 
