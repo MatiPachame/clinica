@@ -4,11 +4,11 @@ import { RouteReuseStrategy } from '@angular/router';
 
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-
+//Imports 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-
+//Imports de Firestore / Firebase database
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';

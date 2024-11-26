@@ -1,13 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>chat</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="bg-image">
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <ion-card class="card">
+              <ion-card-content>
+                <h2 class="text-uppercase text-center mb-5">Dejar Mensaje</h2>
+                <form>
+                  <ion-item>
+                    <ion-label position="floating">Nombre</ion-label>
+                    <ion-input [(ngModel)]="nombre" name="nombre" required></ion-input>
+                  </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">chat</ion-title>
-    </ion-toolbar>
-  </ion-header>
+                  <ion-item>
+                    <ion-label position="floating">Apellido</ion-label>
+                    <ion-input [(ngModel)]="apellido" name="apellido" required></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label position="floating">Mensaje</ion-label>
+                    <ion-textarea [(ngModel)]="mensaje" name="mensaje" rows="4"></ion-textarea>
+                  </ion-item>
+
+                  <div class="d-flex justify-content-center mt-4">
+                    <ion-button expand="block" color="success" (click)="enviar()">Enviar Mensaje</ion-button>
+                  </div>
+                </form>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
+

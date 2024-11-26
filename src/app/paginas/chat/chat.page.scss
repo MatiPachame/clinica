@@ -1,0 +1,32 @@
+.bg-image {
+    height: 100vh;
+    background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .gradient-custom-3 {
+    background: linear-gradient(to bottom right, rgba(63, 81, 181, 0.6), rgba(0, 150, 136, 0.6));
+    height: 100%;
+  }
+  
+  .card {
+    border-radius: 15px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-uppercase {
+    text-transform: uppercase;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .btn-success {
+    --background: #28a745;
+  }
+  

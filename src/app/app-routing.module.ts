@@ -19,10 +19,6 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./paginas/menu/menu.module').then( m => m.MenuPageModule)
   },
-  {
-    path: 'sacar-turno',
-    loadChildren: () => import('./paginas/sacar-turno/sacar-turno.module').then( m => m.SacarTurnoPageModule)
-  }
 
 
 
