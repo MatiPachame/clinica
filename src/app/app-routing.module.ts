@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./paginas/menu/menu.module').then( m => m.MenuPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
 
 
 

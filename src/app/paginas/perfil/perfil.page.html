@@ -1,13 +1,83 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>perfil</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mi Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">perfil</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <!-- Foto de perfil -->
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Foto de perfil</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            <img 
+              [src]="decode.data.perfil_foto || 'ruta-a-imagen-por-defecto.jpg'" 
+              alt="Imagen de perfil" 
+              class="img-account-profile"
+            />
+            <p class="small font-italic text-muted">Foto actual</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Detalles de perfil -->
+      <ion-col size="12" size-md="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Detalles de mi perfil</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <!-- Usuario -->
+            <ion-item lines="none">
+              <ion-label position="stacked">Usuario</ion-label>
+              <p>{{ decode.data.usuario }}</p>
+            </ion-item>
+
+            <ion-grid>
+              <ion-row>
+                <!-- Nombre -->
+                <ion-col size="12" size-md="6">
+                  <ion-item lines="none">
+                    <ion-label position="stacked">Nombre</ion-label>
+                    <p>{{ decode.data.nombre }}</p>
+                  </ion-item>
+                </ion-col>
+
+                <!-- Apellido -->
+                <ion-col size="12" size-md="6">
+                  <ion-item lines="none">
+                    <ion-label position="stacked">Apellido</ion-label>
+                    <p>{{ decode.data.apellido }}</p>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <!-- Correo -->
+            <ion-item lines="none">
+              <ion-label position="stacked">Correo</ion-label>
+              <p>{{ decode.data.mail }}</p>
+            </ion-item>
+
+            <ion-grid>
+              <ion-row>
+                <!-- Cumpleaños -->
+                <ion-col size="12" size-md="6">
+                  <ion-item lines="none">
+                    <ion-label position="stacked">Cumpleaños</ion-label>
+                    <p>{{ decode.data.nacimiento | date: 'dd/MM/yyyy' }}</p>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+

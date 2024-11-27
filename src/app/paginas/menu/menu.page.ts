@@ -17,5 +17,14 @@ export class MenuPage {
   irChat() {
     this.router.navigate(['/chat']);  // Asegúrate de tener esta ruta configurada
   }
+
+  irPerfil() {
+    this.router.navigate(['/perfil']);  // Asegúrate de tener esta ruta configurada
+  }
+
+  CerrarSesion() {
+    localStorage.removeItem('UsuarioToken');
+    this.router.navigate(['/login']);  // Asegúrate de tener esta ruta configurada
+  }
 }
 
