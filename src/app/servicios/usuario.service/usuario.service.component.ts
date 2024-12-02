@@ -35,4 +35,9 @@ export class UsuarioService {
   public nuevoTurno(usuario: Disponibilidad){
     return this.http.post(this.API + "/tomar_turno", usuario);
   }
+
+  public GetTurnosTomados(usuario: Disponibilidad[]) {
+    return this.http.post(this.API + "/get_turnos_tomados", usuario);
+  }
+
 }

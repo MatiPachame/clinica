@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Turnos Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Filtro de Especialidad -->
+  <ion-item lines="none" class="search-bar">
+    <ion-input 
+      placeholder="Ingrese especialidad" 
+      [(ngModel)]="filtroEspecialidad">
+    </ion-input>
+  </ion-item>
+
+  <!-- Tabla de Turnos -->
+  <ion-grid>
+    <ion-row class="table-header">
+      <ion-col size="2">Nombre</ion-col>
+      <ion-col size="2">Apellido</ion-col>
+      <ion-col size="3">Especialidad</ion-col>
+      <ion-col size="2">Fecha</ion-col>
+      <ion-col size="1">Hora</ion-col>
+      <ion-col size="2">Opción</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let turno of disponibilidad | filtromeds:filtroEspecialidad | quitarusados: turnosusados" class="table-row">
+      <ion-col size="2">{{ turno.nombre }}</ion-col>
+      <ion-col size="2">{{ turno.apellido }}</ion-col>
+      <ion-col size="3">{{ turno.especialidad }}</ion-col>
+      <ion-col size="2">{{ turno.fecha | date: 'fullDate' }}</ion-col>
+      <ion-col size="1">{{ turno.hora }}:00</ion-col>
+      <ion-col size="2">
+        <ion-button color="success" expand="block" (click)="tomarTurno(turno)">
+          Tomar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

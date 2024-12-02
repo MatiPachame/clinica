@@ -1,0 +1,45 @@
+/* Fondo general */
+ion-content {
+    --background: #f7f7f7;
+  }
+  
+  /* Estilo del filtro */
+  .search-bar {
+    margin: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+  }
+  
+  /* Tabla de turnos */
+  ion-grid {
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-header {
+    font-weight: bold;
+    text-align: center;
+    background: #4CAF50;
+    color: white;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+  }
+  
+  .table-row {
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+  
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  ion-button {
+    font-size: 14px;
+  }
+  
+
