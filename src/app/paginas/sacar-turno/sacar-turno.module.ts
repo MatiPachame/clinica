@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { SacarTurnoPageRoutingModule } from './sacar-turno-routing.module';
 
 import { SacarTurnoPage } from './sacar-turno.page';
+import { FiltromedsPipe } from "../../pipe/filtromeds.pipe";
+import { QuitarusadosPipe } from "../../pipe/quitarusados.pipe";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SacarTurnoPageRoutingModule
-  ],
+    SacarTurnoPageRoutingModule,
+    FiltromedsPipe,
+    QuitarusadosPipe
+],
   declarations: [SacarTurnoPage]
 })
 export class SacarTurnoPageModule {}

@@ -9,6 +9,8 @@ import { Disponibilidad } from 'src/app/entidades/disponibilidad';
 })
 export class UsuarioService {
 
+  public listaUsuario: Usuario[] = [];
+
   private API: String = "https://matipachame-apiclinica.mdbgo.io";
 
   public usuarioLogueado: Usuario = { nombre: '', apellido: '', mail: '', nacimiento: new Date(), usuario: '', password: '', tipo_usuario: 0, autorizado: 1 };
@@ -38,6 +40,10 @@ export class UsuarioService {
 
   public GetTurnosTomados(usuario: Disponibilidad[]) {
     return this.http.post(this.API + "/get_turnos_tomados", usuario);
+  }
+
+  public registrarEnApi(usuario: Usuario) {
+    return this.http.post(this.API + "/insertar", usuario);
   }
 
 }

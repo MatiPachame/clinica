@@ -1,0 +1,103 @@
+<ion-content>
+  <div class="background">
+    <ion-card class="register-card">
+      <ion-card-header>
+        <ion-card-title class="text-center">Registrar usuario</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form (ngSubmit)="registrar()">
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.nombre" name="nombre" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Apellido</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.apellido" name="apellido" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Mail</ion-label>
+            <ion-input type="email" [(ngModel)]="usuario.mail" name="mail" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Fecha de Nacimiento</ion-label>
+            <ion-datetime [(ngModel)]="usuario.nacimiento" name="nacimiento" required></ion-datetime>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input type="text" [(ngModel)]="usuario.usuario" name="usuario" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="usuario.password" name="password" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Repite tu Contraseña</ion-label>
+            <ion-input type="password" [(ngModel)]="password2" name="password2" required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Perfil Foto</ion-label>
+            <input type="file" (change)="subirFoto($event, 'perfil_foto')" name="perfil_foto" />
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Tipo de Usuario</ion-label>
+            <ion-select [(ngModel)]="usuario.tipo_usuario" name="tipo_usuario">
+              <ion-select-option value="1">Paciente</ion-select-option>
+              <ion-select-option value="2">Medico</ion-select-option>
+              <ion-select-option value="3">Administrador</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ng-container *ngIf="usuario.tipo_usuario == 2">
+            <ion-item>
+              <ion-label>Especialidad</ion-label>
+              <ion-select [(ngModel)]="usuario.especialidad" name="especialidad">
+                <ion-select-option value="Clinico">Clínico</ion-select-option>
+                <ion-select-option value="Traumatologo">Traumatólogo</ion-select-option>
+                <ion-select-option value="Cardiologo">Cardiólogo</ion-select-option>
+                <ion-select-option value="Dermatologo">Dermatólogo</ion-select-option>
+                <ion-select-option value="Otorrinolaringologo">Otorrinolaringólogo</ion-select-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Días de Atención</ion-label>
+              <ion-checkbox-group [(ngModel)]="usuario.dias_atencion" name="dias_atencion">
+                <ion-item *ngFor="let dia of diasSemana">
+                  <ion-label>{{ dia }}</ion-label>
+                  <ion-checkbox slot="start" [value]="dia"></ion-checkbox>
+                </ion-item>
+              </ion-checkbox-group>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Horario Desde</ion-label>
+              <ion-input type="time" [(ngModel)]="usuario.horario_desde" name="horario_desde"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Horario Hasta</ion-label>
+              <ion-input type="time" [(ngModel)]="usuario.horario_hasta" name="horario_hasta"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Especialidad Foto</ion-label>
+              <input type="file" (change)="subirFoto($event, 'especialidad_foto')" name="especialidad_foto" />
+            </ion-item>
+          </ng-container>
+
+          <div class="button-container">
+            <ion-button expand="block" type="submit" [disabled]="!passwordCoinciden()">Registrar</ion-button>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

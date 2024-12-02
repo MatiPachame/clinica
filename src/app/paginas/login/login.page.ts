@@ -51,4 +51,8 @@ login() {
     }
 });
 }
+
+navigateToRegistro() {
+  this.navCtrl.navigateForward('/registro'); // Asegúrate de tener una página '/registro' configurada en tu enrutador
+}
 }

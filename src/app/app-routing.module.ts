@@ -22,9 +22,14 @@ const routes: Routes = [
   {
     path: 'perfil',
     loadChildren: () => import('./paginas/perfil/perfil.module').then( m => m.PerfilPageModule)
-  },  {
+  },
+  {
     path: 'sacar-turno',
     loadChildren: () => import('./paginas/sacar-turno/sacar-turno.module').then( m => m.SacarTurnoPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./paginas/registro/registro.module').then( m => m.RegistroPageModule)
   },
 
 

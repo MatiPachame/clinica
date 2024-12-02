@@ -24,10 +24,16 @@
               <ion-spinner *ngIf="isLoading"></ion-spinner>
               Iniciar Sesión
             </ion-button>
+
+            <!-- Botón de Registro -->
+            <ion-button expand="block" color="secondary" (click)="navigateToRegistro()">
+              Registrarse
+            </ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
 

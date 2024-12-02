@@ -2,6 +2,29 @@
 ion-content {
     --background: #f7f7f7;
   }
+
+  /* Estilo para los encabezados de la tabla */
+.table-header {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #000000; /* Texto negro */
+  font-weight: bold;
+}
+
+/* Estilo para las filas de la tabla */
+.table-row {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #000000; /* Texto negro */
+}
+
+/* Estilo para el input de búsqueda */
+.search-bar ion-input {
+  color: #000000; /* Texto negro */
+  background-color: #ffffff; /* Fondo blanco */
+  border: 1px solid #cccccc; /* Borde gris claro */
+  padding: 5px;
+  border-radius: 5px;
+}
+
   
   /* Estilo del filtro */
   .search-bar {

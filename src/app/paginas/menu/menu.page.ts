@@ -23,8 +23,8 @@ export class MenuPage {
   }
 
   CerrarSesion() {
+    this.router.navigate(['']);  // Asegúrate de tener esta ruta configurada
     localStorage.removeItem('UsuarioToken');
-    this.router.navigate(['/login']);  // Asegúrate de tener esta ruta configurada
   }
 }
 

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Disponibilidad } from '../clases/disponibilidad';
+import { Disponibilidad } from '../entidades/disponibilidad';
 
 @Pipe({
   name: 'filtromeds',
