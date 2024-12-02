@@ -96,7 +96,7 @@ export class RegistroPage {
           alert("Usuario creado exitosamente!");
 
           this.ngZone.run(() => {
-          this.router.navigate(['/login']);
+          this.router.navigate(['']);
         });
         
 
